@@ -2,20 +2,20 @@
 //2
 let n = 6
 function fib(n){
+    let f = []
     if(n <=0){
-        return  [0,1]
+        return  0
     }
-    else{
-     var out = fib(n-1);
-     out.push(out[out.length-1]+out[out.length-2])
-    }
-   
-    return out;
+    
+        f[0] = 0
+        f[1] =1;
+        let sum = f[0]+f[1]
+        for(var i=2; i<=n; i++){
+            f[i] = f[i-1]+f[i-2]
+            sum += f[i]
+        }
+    
+    return sum
 }
-var arr = fib(n)
-var sum = 0
-for(var i=0; i<arr.length; i++){
-    sum += arr[i]
-   
-}
-console.log(sum)
+
+console.log(fib(n))
